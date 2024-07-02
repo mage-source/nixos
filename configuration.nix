@@ -91,6 +91,9 @@
   # Install firefox.
   programs.firefox.enable = true;
 
+  # Install hyprland
+  programs.hyprland.enable = true;
+
   # Install and make nushell default shell
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
