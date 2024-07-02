@@ -3,17 +3,15 @@
 {
 
   options = {
-    alacritty-config.enable = lib.mkEnableOption "enable user module";  
+    hyprland-config.enable = lib.mkEnableOption "enable user module";  
   };
 
 
-  config = lib.mkIf config.alacritty-config.enable {
+  config = lib.mkIf config.hyprland-config.enable {
 
-    programs.hyprland = {
+    wayland.windowManager.hyprland = {
 
       enable = true;
-
-      package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
     };    
 

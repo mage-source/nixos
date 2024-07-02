@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -10,10 +10,12 @@
     [
       ./modules/editors/neovim-config.nix
       ./modules/terminals/alacritty-config.nix
+      ./modules/window-managers/hyprland-config.nix
     ];
 
   neovim-config.enable = true;
   alacritty-config.enable = true;
+  hyprland-config.enable = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
