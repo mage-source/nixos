@@ -38,6 +38,9 @@
             10)
           );
         monitor = ",preferred,auto,1";
+        input = {
+          kb_options = "caps:swapescape";
+        };
       };
 
   };
