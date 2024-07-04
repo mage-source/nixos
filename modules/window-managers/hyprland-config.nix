@@ -37,9 +37,12 @@
             )
             10)
           );
-        monitor = ",preferred,auto,1";
+        monitor = [
+          "eDP-1, preferred, 0x0, 1"
+          "DP-2, preferred, 0x-1080, 1"
+        ];
         input = {
-          kb_options = "caps:swapescape";
+            kb_options = "caps:swapescape";
         };
       };
 
