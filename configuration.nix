@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
@@ -23,6 +23,9 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
@@ -93,7 +96,10 @@
   # Install hyprland
   programs.hyprland.enable = true;
 
-  # Install and make nushell default shell
+  # Install neovim
+  programs.neovim.enable = true;
+
+  # Install and make zsh default shell
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
@@ -108,7 +114,6 @@
     vim
     wget
     curl
-    neovim
   ];
   
   # Allow unfree packages
