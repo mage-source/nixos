@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.
@@ -109,20 +108,14 @@
     vim
     wget
     curl
+    neovim
   ];
   
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "yiyuanh" = import ./home.nix;
-    };
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # Set the default editor to vim
-  environment.variables.EDITOR = "vim";
+  environment.variables.EDITOR = "nvim";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
